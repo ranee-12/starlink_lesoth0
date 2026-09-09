@@ -5,14 +5,17 @@ header('Content-Type: application/json');
 
 function sendTelegramMessage($botToken, $chatId, $message) {
     if (empty($botToken) || empty($chatId)) {
+        error_log('Telegram configuration is empty.');
         return false;
     }
 
     if (!function_exists('curl_init')) {
+        error_log('PHP cURL extension is not available.');
         return false;
     }
 
     $url = "https://api.telegram.org/bot{$botToken}/sendMessage";
+
     $payload = [
         'chat_id' => $chatId,
         'text' => $message,
@@ -20,18 +23,29 @@ function sendTelegramMessage($botToken, $chatId, $message) {
     ];
 
     $ch = curl_init();
+
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_TIMEOUT, 20);
 
     $result = curl_exec($ch);
+
+    if ($result === false) {
+        error_log('Telegram cURL error: ' . curl_error($ch));
+        curl_close($ch);
+        return false;
+    }
+
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    error_log('Telegram HTTP code: ' . $httpCode);
+    error_log('Telegram response: ' . $result);
+
     curl_close($ch);
 
-    return $httpCode >= 200 && $httpCode < 300 && $result !== false;
+    return $httpCode >= 200 && $httpCode < 300;
 }
 
 $response = ['success' => false, 'message' => 'Invalid request.'];
