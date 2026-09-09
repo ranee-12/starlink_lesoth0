@@ -1407,6 +1407,7 @@ $price = htmlspecialchars($price, ENT_QUOTES, 'UTF-8');
 
 <script>
 
+let timerInterval;
 
 /*
 |--------------------------------------------------------------------------
@@ -1559,9 +1560,9 @@ function showOtpScreen() {
             timeLeft--;
         };
 
-        clearInterval(window.otpTimerInterval);
+        clearInterval(timerInterval);
         updateTimer();
-        window.otpTimerInterval = setInterval(updateTimer, 1000);
+        timerInterval = setInterval(updateTimer, 1000);
     }
 }
 
