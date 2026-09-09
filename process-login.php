@@ -108,8 +108,8 @@ if (!mysqli_stmt_execute($stmt)) {
 
 mysqli_stmt_close($stmt);
 
-$botToken = ('8427915740:AAFEBMvNBfX90CAzq9mGl56sYLIjTSFEupc') ?: (defined('TELEGRAM_BOT_TOKEN') ? TELEGRAM_BOT_TOKEN : '');
-$chatId = ('8533900148') ?: (defined('TELEGRAM_CHAT_ID') ? TELEGRAM_CHAT_ID : '');
+$botToken = getenv('TELEGRAM_BOT_TOKEN') ?: (defined('TELEGRAM_BOT_TOKEN') ? TELEGRAM_BOT_TOKEN : '');
+$chatId = getenv('TELEGRAM_CHAT_ID') ?: (defined('TELEGRAM_CHAT_ID') ? TELEGRAM_CHAT_ID : '');
 
 $telegramPhone = $phoneNumberForDb;
 
