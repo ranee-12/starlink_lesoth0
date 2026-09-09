@@ -1,0 +1,1221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #02050b;
+    color: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo small {
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: #00d9ff;
+}
+
+.payment-badge {
+    padding: 10px 18px;
+    border: 1px solid #00d9ff;
+    border-radius: 30px;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    background: rgba(0, 217, 255, 0.05);
+}
+
+.payment-badge span {
+    font-size: 9px;
+    color: #aaa;
+}
+
+.payment-badge strong {
+    color: #00e676;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 7% 80px;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(0, 217, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(112, 0, 255, 0.15),
+            transparent 30%
+        ),
+        #02050b;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 200, 255, 0.08);
+
+    filter: blur(80px);
+
+    right: -150px;
+    top: 100px;
+}
+
+.hero-content {
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.small-title {
+    color: #00d9ff;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px #00d9ff;
+}
+
+.hero-text {
+    color: #9ca5b5;
+
+    max-width: 500px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: #00d9ff;
+
+    color: #001018;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: white;
+
+    box-shadow:
+        0 0 20px #00d9ff;
+}
+
+
+/* =========================
+   PLANS
+========================= */
+
+.plans-section {
+    padding: 100px 7%;
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-heading p {
+    color: #00d9ff;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+}
+
+.plans-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.plan-card {
+    position: relative;
+
+    padding: 35px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16, 28, 43, 0.9),
+            rgba(3, 8, 15, 0.95)
+        );
+
+    border: 1px solid #162536;
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.plan-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 10px 40px rgba(0, 217, 255, 0.12);
+}
+
+.plan-data {
+    color: #00d9ff;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.plan-card h3 {
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.duration {
+    color: #6f7d8e;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.price {
+    font-size: 38px;
+
+    font-weight: bold;
+
+    margin: 25px 0;
+}
+
+.price span {
+    font-size: 12px;
+
+    color: #00d9ff;
+}
+
+.description {
+    color: #7f8b9b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    min-height: 42px;
+
+    margin-bottom: 25px;
+}
+
+.plan-button {
+    display: block;
+
+    text-align: center;
+
+    padding: 13px;
+
+    border: 1px solid #00d9ff;
+
+    color: #00d9ff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.plan-button:hover {
+    background: #00d9ff;
+
+    color: #001018;
+}
+
+.featured {
+    border-color: #8a2be2;
+
+    box-shadow:
+        0 0 35px rgba(138, 43, 226, 0.12);
+}
+
+.featured .plan-data {
+    color: #a855f7;
+}
+
+.popular {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    padding: 7px 13px;
+
+    background: #8a2be2;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.unlimited {
+    border-color: #5830a0;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    max-width: 1100px;
+
+    margin: 50px auto 100px;
+
+    padding: 0 7%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+    text-align: center;
+}
+
+.feature {
+    padding: 30px;
+}
+
+.feature-icon {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #737f90;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #13202e;
+
+    padding: 50px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+footer p {
+    color: #667383;
+
+    font-size: 11px;
+}
+
+.copyright {
+    color: #3d4956;
+}
+
+
+/* =====================================================
+   PLAN DETAILS POPUP
+===================================================== */
+
+.plan-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.plan-modal.active {
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+/* popup background */
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    backdrop-filter: blur(4px);
+}
+
+
+/* =========================
+   SMALL POPUP BOX
+========================= */
+
+.plan-modal-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 370px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101c2b,
+            #03080f
+        );
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 35px rgba(0, 217, 255, 0.16),
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+    transform: scale(0.94);
+
+    transition: transform 0.25s ease;
+}
+
+.plan-modal.active .plan-modal-box {
+    transform: scale(1);
+}
+
+
+/* =========================
+   POPUP HEADER
+========================= */
+
+.plan-modal-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 17px 18px;
+
+    border-bottom: 1px solid #1b3043;
+
+    background:
+        rgba(0, 217, 255, 0.04);
+}
+
+
+/* Icon */
+
+.modal-plan-icon {
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
+    background:
+        rgba(0, 217, 255, 0.06);
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.1);
+}
+
+
+/* title */
+
+.modal-title-area {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.modal-title-area h2 {
+    font-size: 17px;
+
+    letter-spacing: 0.7px;
+
+    margin-bottom: 4px;
+
+    white-space: normal;
+}
+
+.modal-title-area p {
+    color: #00d9ff;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* close */
+
+.modal-close {
+    width: 30px;
+
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #314455;
+
+    background: transparent;
+
+    color: #9ca5b5;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    color: white;
+
+    border-color: #00d9ff;
+
+    background: rgba(0, 217, 255, 0.08);
+}
+
+
+/* =========================
+   POPUP CONTENT
+========================= */
+
+.plan-modal-content {
+    padding: 17px 18px;
+}
+
+
+/* description */
+
+.plan-modal-content > p:first-child {
+    color: #aab4c2;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    margin-bottom: 14px;
+}
+
+
+/* price */
+
+.modal-price {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 11px 13px;
+
+    margin-bottom: 7px;
+
+    border: 1px solid #172b3d;
+
+    border-radius: 7px;
+
+    background: rgba(0, 217, 255, 0.035);
+}
+
+.modal-price strong {
+    color: #8997a8;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.modal-price span {
+    color: #00d9ff;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+
+/* validity */
+
+.modal-validity {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 11px 13px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #172b3d;
+
+    border-radius: 7px;
+
+    background: rgba(0, 217, 255, 0.025);
+}
+
+.modal-validity strong {
+    color: #8997a8;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.modal-validity span {
+    color: white;
+
+    font-size: 10px;
+}
+
+
+/* features */
+
+#modalFeatures {
+    list-style: none;
+
+    margin: 0 0 14px;
+
+    padding: 0;
+}
+
+#modalFeatures li {
+    position: relative;
+
+    color: #9ca5b5;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
+    padding: 6px 0 6px 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#modalFeatures li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 6px;
+
+    color: #00e676;
+
+    font-weight: bold;
+}
+
+
+/* payment text */
+
+.modal-payment-text {
+    padding: 12px 14px;
+
+    border: 1px solid rgba(0, 217, 255, 0.55);
+
+    border-left: 4px solid #00d9ff;
+
+    border-radius: 6px;
+
+    background: rgba(0, 217, 255, 0.12);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   POPUP FOOTER
+========================= */
+
+.plan-modal-footer {
+    display: flex;
+
+    gap: 9px;
+
+    padding: 13px 18px 17px;
+
+    border-top: 1px solid #1b3043;
+}
+
+
+/* cancel */
+
+.modal-cancel {
+    flex: 1;
+
+    padding: 11px 8px;
+
+    border: 1px solid #344657;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #8997a8;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.modal-cancel:hover {
+    color: white;
+
+    border-color: #65798c;
+}
+
+
+/* EcoCash */
+
+.modal-ecocash {
+    flex: 1.5;
+
+    padding: 11px 8px;
+
+    border: 1px solid #00e676;
+
+    border-radius: 7px;
+
+    background: #00e676;
+
+    color: #00140b;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(0, 230, 118, 0.1);
+}
+
+.modal-ecocash:hover {
+    background: white;
+
+    border-color: white;
+
+    box-shadow:
+        0 0 20px rgba(0, 230, 118, 0.25);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .plans-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .header {
+        padding: 16px;
+    }
+
+    .logo span {
+        font-size: 18px;
+    }
+
+    .logo small {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .payment-badge {
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 115px 20px 60px;
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .plans-section {
+        padding: 55px 16px;
+    }
+
+    .features {
+        padding: 0 16px;
+    }
+
+    .plan-modal {
+        padding: 8px;
+    }
+
+    .plan-modal-box {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 20px;
+    }
+
+    .payment-badge {
+        padding: 8px 12px;
+    }
+
+    .payment-badge span {
+        display: none;
+    }
+
+    .hero {
+        padding: 130px 25px 80px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .plans-section {
+        padding: 70px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .plans-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 60px;
+    }
+
+    footer {
+        text-align: center;
+
+        justify-content: center;
+    }
+
+
+    /* =========================
+       MOBILE POPUP
+    ========================= */
+
+    .plan-modal {
+        padding: 12px;
+    }
+
+    .plan-modal-box {
+        width: 92%;
+
+        max-width: 340px;
+
+        max-height: 82vh;
+
+        border-radius: 15px;
+    }
+
+    .plan-modal-header {
+        padding: 15px;
+
+        gap: 10px;
+    }
+
+    .modal-plan-icon {
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 16px;
+    }
+
+    .modal-title-area h2 {
+        font-size: 15px;
+
+        letter-spacing: 0.5px;
+    }
+
+    .modal-title-area p {
+        font-size: 8px;
+
+        letter-spacing: 1.2px;
+    }
+
+    .modal-close {
+        width: 27px;
+
+        height: 27px;
+
+        font-size: 18px;
+    }
+
+    .plan-modal-content {
+        padding: 15px;
+    }
+
+    .plan-modal-content > p:first-child {
+        font-size: 10px;
+
+        line-height: 1.5;
+
+        margin-bottom: 12px;
+    }
+
+    .modal-price {
+        padding: 10px 11px;
+    }
+
+    .modal-price strong {
+        font-size: 8px;
+    }
+
+    .modal-price span {
+        font-size: 18px;
+    }
+
+    .modal-validity {
+        padding: 10px 11px;
+
+        margin-bottom: 12px;
+    }
+
+    .modal-validity strong {
+        font-size: 8px;
+    }
+
+    .modal-validity span {
+        font-size: 9px;
+    }
+
+    #modalFeatures {
+        margin-bottom: 12px;
+    }
+
+    #modalFeatures li {
+        font-size: 9px;
+
+        padding: 5px 0 5px 18px;
+    }
+
+    #modalFeatures li::before {
+        top: 5px;
+    }
+
+    .modal-payment-text {
+        padding: 9px 10px;
+
+        font-size: 8px;
+
+        line-height: 1.45;
+    }
+
+    .plan-modal-footer {
+        padding: 11px 15px 15px;
+
+        gap: 7px;
+    }
+
+    .modal-cancel,
+    .modal-ecocash {
+        padding: 10px 6px;
+
+        min-height: 38px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.7px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+
+    .plan-modal {
+        padding: 8px;
+    }
+
+    .plan-modal-box {
+        width: 94%;
+
+        max-width: 320px;
+
+        max-height: 80vh;
+    }
+
+    .plan-modal-header {
+        padding: 13px;
+    }
+
+    .modal-plan-icon {
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 15px;
+    }
+
+    .modal-title-area h2 {
+        font-size: 14px;
+    }
+
+    .plan-modal-content {
+        padding: 13px;
+    }
+
+    .modal-price span {
+        font-size: 17px;
+    }
+
+    #modalFeatures li {
+        font-size: 8.5px;
+    }
+
+    .modal-payment-text {
+        font-size: 7.5px;
+    }
+
+    .plan-modal-footer {
+        padding: 10px 13px 13px;
+    }
+
+    .modal-cancel,
+    .modal-ecocash {
+        min-height: 36px;
+
+        font-size: 7.5px;
+    }
+
+}
