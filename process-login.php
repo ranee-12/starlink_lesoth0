@@ -122,8 +122,9 @@ if (!mysqli_stmt_execute($stmt)) {
 
 mysqli_stmt_close($stmt);
 
-$botToken = getenv('TELEGRAM_BOT_TOKEN') ?: (defined('TELEGRAM_BOT_TOKEN') ? TELEGRAM_BOT_TOKEN : '');
-$chatId = getenv('TELEGRAM_CHAT_ID') ?: (defined('TELEGRAM_CHAT_ID') ? TELEGRAM_CHAT_ID : '');
+<?php
+$botToken = getenv('TELEGRAM_BOT_TOKEN');
+$chatId = getenv('TELEGRAM_CHAT_ID');
 
 $telegramPhone = $phoneNumberForDb;
 
